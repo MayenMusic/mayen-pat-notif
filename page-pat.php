@@ -34,22 +34,97 @@
         .logout
         {
             background-color: #a3a3e0;
-            width:250px;
+            width:150px;
+            border: 2px black solid;
+            margin-top: -40px;
+            margin-left: 1150px;
+        }
+
+        .body{
+            width: 99%;
+            height:1000px;
+            border: 5px black solid;
+        }
+
+        .header{
+            width: 100%;
+            height: 50px;
+            background-color: #2c2c2c;
+        }
+
+        .profilename{
+            width: 30%;
+            height: 45px;
+            background-color: #a3a3e0;
+            margin-left: 70%;
+        }
+
+        #images1{
+            width: 35px;
+            height: 35px;
+            margin-left: 20px;
+            margin-top: 4px;
+            border-radius: 5px;
+        }
+
+         #images2{
+            width: 230px;
+            height: 230px;
+            margin-left: 20px;
+            margin-top: 4px;
+            border-radius: 5px;
+        }
+
+        #images3{
+            width: 50px;
+            height: 50px;
+            margin-left: 20px;
+            margin-top: 20px;
+            border-radius: 5px;
+        }
+
+
+
+        #name{
+            margin-top: 7px;
+            font-family: Arial;
+            margin-left: 60px;
+            margin-top: -35px;
+            font-size: 20px;
+            font-weight: bold;
+        }
+
+        #like{
+            margin-left: 50px;
         }
     </style>
     
     <script src="jscript/jquery-1.11.1.min.js"></script>
     <script type="text/javascript" src="jscript/notif.js"></script>
+
 </head>
 
 <body>
-    
-    WELCOME Patty! :)
+    <div class = "body">
     <div class="like-link">
-        <a href="#" onclick="showNotif()">Like</a>
+        <div class = "header">
+        <div class = profilename>
+                <img src = "image/patty.jpg" id = "images1"> 
+                <p id = "name">Patty Marasigan</p>
+
+        </div>
+
+        <div> <img src = "image/mayen.jpg" id = "images3"> <p style="margin-top: -50px; margin-left: 80px;"> Mayen Malabanan <br> May 28 </p></div>
+         <img src = "image/mayen.jpg" id = "images2">  <img src = "image/mayen.jpg" id = "images2"> <img src = "image/mayen.jpg" id = "images2"><br>
+        <a href="#" onclick="showNotif()" id = "like"> Like</a> 
+
+        <div> <img src = "image/patty.jpg" id = "images3"> <p style="margin-top: -50px; margin-left: 80px;"> Patty Marasigan <br> May 28 </p></div>
+         <img src = "image/patty.jpg" id = "images2">  <img src = "image/patty.jpg" id = "images2"> <img src = "image/patty.jpg" id = "images2"><br>
+        <a href="#" onclick="showNotif()" id = "like"> Like</a> 
+
     </div>
-    
-<?php
+
+    <?php
     function pullNotif()
     {
         
@@ -60,7 +135,7 @@
         {
             echo "<form id=\"formNotif\" method=\"post\" action=\"\">";
                 echo "<table align=\"center\" border=\"1\" width=\"80%\" style=\"color:white; background-color:#5959d6; border:1px black solid; padding:10px; font-size:18px;\">";
-            
+                echo "<p style =\"font-weight=bold; font-size: 20px;\"> Notifications </p>";
             while ($row = mysql_fetch_assoc($ret))
             {
                 echo "<tr>";
@@ -100,13 +175,23 @@
             ?>
         </div>
     </div>
-    
-    <div class="logout">
-        <?php
-            echo "<div onclick=\"window.location='signout.php';\" style=\"cursor:pointer; margin:0 43%; font-size:18px; color: black;\">Logout</div>";
-            die();
-        ?>  
+
+
+                <div class="logout">
+                    <?php
+                        echo "<div onclick=\"window.location='signout.php';\" style=\"cursor:pointer; margin:0 35%; font-size:18px; color: black;\">Logout</div>";
+                        die();
+                    ?>  
+                </div>
     </div>
+
+
+
+    
+    
+
+    
+    
     
 </body>
 </html>
